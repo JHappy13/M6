@@ -13,7 +13,18 @@ function afegirMetode(objecte, nom, funcio){
 }
 
 
-var persona = {};
-afegirMetode(usuaris);
-afegirMetode(usuaris, "Calcul");
-afegirMetode(usuaris, "Calcul", "Matricula");
+afegirMetode(usuaris, "Parametros0", function(){ return this.noms});
+afegirMetode(usuaris, "Parametros1", function(nombre){ 
+    var nom;
+    for (let i = 0; i < this.noms.length; i++) {
+        if(nombre == this.noms[i]){
+            nom = this.noms[i];
+        }else{
+            nom = "No se ha encontrado el nombre";
+        }
+    }
+    return nom;
+ });
+afegirMetode(usuaris, "Parametros2", function(nombre, apellido){ });
+
+alert(this.usuaris.Parametros1("joan"));
