@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "https://code.jquery.com/qunit/qunit-2.20.0.css">
+    <script src = "https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+</head>
+<body>
+    <div id = "qunit"></div>
+      <div id = "qunit-fixture"></div> 
+      
+      <script>
+        function posarReves(opcio, text) {
+	            var separator = " ";
+	        if(opcio == 0){
+	        	separator = "";
+	        }
+	        return text.split(separator).reverse().join(separator);
+        }
+
+        QUnit.test("Conjunt de Tests", function(assert){
+            assert.equal( this.posarReves(1, "Hola me llamo jaymarc"), "Hola me llamo jaymarc", "No funciona" );
+        });
+      </script>
+</body>
+</html>
