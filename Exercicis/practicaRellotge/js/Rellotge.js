@@ -1,12 +1,13 @@
 class Rellotge{
     
-    constructor(){
-        this.rellotge;
+    constructor(Rellotge){
+        this.Rellotge = Rellotge;
+        this.stopRellotge = false;
     }
 
     //Obtenir el temps actual
-    GetTime(temps){
-        return this.rellotge;
+    GetTime(){
+        return this.Rellotge;
     }
 
     //Parar el cronometro
