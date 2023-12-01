@@ -11,13 +11,14 @@ class Rellotge{
     }
 
     //Parar el cronometro
-    StopTime(){
-
+    StopTime(stop, stopRellotge){
+        this.stopRellotge = stop;
+        this.Rellotge = stopRellotge;
     }
 
     //Reanudar el cronometro
-    StartTime(){
-
+    StartTime(start){
+        this.stopRellotge = start;
     }
 
     // Cada cierto tiempo de segundo se imprimira la funcion

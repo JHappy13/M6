@@ -1,33 +1,37 @@
-var dateActual = Date.now();
-var r;
+var dateActual = Date.now(); //Fecha actual
+var r = new Rellotge(); //Definir la variable r
 
+//Funciones de botones
 function GetTimeBtn(){
     alert(this.r.GetTime());
 }
 
 function StopTimeBtn(){
-    console.log("Stop");
+    this.r.StopTime(true, r.Rellotge);
 }
 
 function StartTimeBtn(){
-    console.log("Start");
+    this.r.StartTime(false);
 }
 
 function ExecuteBtn(){
-    console.log("Execute");
+    
 }
 
+//Funcion para formatear el relog
 function formatearRelog(temps){
     const segundos = Math.floor(temps /1000);
     const milisegundos = Math.floor(temps % 10000);
     return segundos + ":" + milisegundos;
 }
 
+
 setInterval(() => {
     let temps = Date.now() - dateActual;
-    
-    // Crear una nueva instancia de Rellotge cada vez que se actualiza
-    r = new Rellotge(formatearRelog(temps));
-
-   document.getElementById('rellotge').innerHTML = formatearRelog(temps);
+    if(!this.r.stopRellotge){
+        r.Rellotge = formatearRelog(temps);
+        document.getElementById('rellotge').innerHTML = formatearRelog(temps);
+    }else{
+        document.getElementById('rellotge').innerHTML = r.Rellotge;
+    }
 }, 1);
